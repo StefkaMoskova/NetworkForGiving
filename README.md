@@ -22,5 +22,5 @@ Security is provided by using a JWT token for completing the authentication:
 
     - JWT token - There are two types of users - registered/unregistered (with/without token). Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources related to the charities that are permitted with that token. 
 
-Used technologies: Angular CLI version 9.1.6; Spring Boot 1.8; PostgreSQL database
+Used technologies: Angular CLI version 9.1.6; Spring Boot 1.8; PostgreSQL database.
 
