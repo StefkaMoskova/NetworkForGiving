@@ -1,0 +1,56 @@
+h1 {
+  padding-left: 100px;
+}
+
+h6 {
+  padding-left: 100px;
+}
+
+form {
+  padding-left: 70px;
+}
+
+.buttonCreate {
+  padding-left: 300px;
+}
+
+blockquote {
+  font-size: 1.2em;
+  width: 50%;
+  margin: -610px auto auto 790px;
+  font-style: italic;
+  color: #555555;
+  padding: 1.4em 40px 1.2em 75px;
+  border-left: 10px solid #0172A3;
+  line-height: 1.2;
+  position: relative;
+  background: #EDEDED;
+}
+
+blockquote::before {
+  font-family: Arial;
+  content: "\201C";
+  color: #0172A3;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+
+blockquote::after {
+  content: '';
+}
+
+blockquote span {
+  display: block;
+  color: #333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+#createCharityPhoto {
+  float: right;
+  margin: -470px auto auto 790px;
+}
+

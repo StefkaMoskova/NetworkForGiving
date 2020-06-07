@@ -1,0 +1,27 @@
+<div class="login-wrapper">
+  <form class="login">
+    <section class="title">
+      <h3 class="welcome">Welcome to</h3>
+      <b>Network for Giving</b>
+    </section>
+    <section class="title">
+      <h3 class="welcome">Login</h3>
+    </section>
+    <div class="login-group">
+      <form clrForm>
+        <clr-input-container>
+          <input placeholder="Username" clrInput [(ngModel)]="username" name="username" required/>
+          <clr-control-error>This field is required!</clr-control-error>
+        </clr-input-container>
+      </form>
+      <form clrForm>
+        <clr-password-container>
+          <input placeholder="Password" clrPassword [(ngModel)]="password" name="password" required/>
+          <clr-control-error *clrIfError="'required'">This field is required!</clr-control-error>
+        </clr-password-container>
+      </form>
+      <button (click)="login()" class="btn btn-primary">LOGIN</button>
+      <a [routerLink]="['/register']" class="btn btn-link">Don't have an account yet? Sign up.</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,103 @@
+<nav class="subnav">
+  <ul class="nav">
+    <li class="nav-item">
+      <a [routerLink]="['/home-page']" class="nav-link active" href="#">Charity Catalogue</a>
+    </li>
+  </ul>
+</nav>
+<div *ngIf="charity">
+  <h1 _ngcontent-clarity-c209="" style="font-size:40px">
+    <b>{{charity.title}}</b>
+  </h1>
+  <h6 _ngcontent-clarity-c209="" style="font-size:20px">
+    Charity details
+  </h6>
+  <br><br>
+  <form clrForm>
+    <div class="content-container">
+      <div class="content-area" style="font-size:20px">
+        <label> <b>Title: </b></label>
+        {{charity.title}}
+      </div>
+    </div>
+    <br>
+    <div class="content-container">
+      <div class="content-area" style="font-size:20px">
+        <label style="font-size:20px"><b>Description: </b>
+        </label>
+        {{charity.description}}
+      </div>
+    </div>
+    <br>
+    <div class="content-container">
+      <div class="content-area" style="font-size:20px">
+        <label style="font-size:20px"><b>Required amount: </b>
+        </label>
+        {{charity.amountRequired}}$
+      </div>
+    </div>
+    <br>
+    <div class="content-container">
+      <div class="content-area" style="font-size:20px">
+        <label style="font-size:20px"><b>Collected amount: </b>
+        </label>
+        {{charity.amountCollected}}$
+      </div>
+    </div>
+  </form>
+  <br><br>
+  <span *ngIf="isAuthenticated">
+  <div class="buttonDonate">
+    <button (click)="donate()" type="button" class="btn btn-icon btn-success" style="width:150px;height:50px;"
+            aria-label="done">
+      <clr-icon shape="heart"></clr-icon>
+      Donate
+    </button>
+  </div>
+<!--  <div class="buttonVolunteer">-->
+<!--    <button (click)="volunteer()" type="button" class="btn btn-icon btn-primary" style="width:150px;height:50px;"-->
+<!--            aria-label="done">-->
+<!--      <clr-icon shape="employee-group"></clr-icon>-->
+<!--      Volunteer-->
+<!--    </button>-->
+<!--  </div>-->
+  </span>
+  <clr-modal [(clrModalOpen)]="donateModalOpened" [clrModalStaticBackdrop]="false" *ngIf="charity">
+    <h3 class="modal-title">Donate Details</h3>
+    <div class="modal-body">
+      <form clrForm>
+        <img class="left" src="./assets/donateModalPhoto.png">
+        <clr-input-container class="right">
+          <label style="color: #3c8600">Donation amount: </label>
+          <input clrInput placeholder="Donation amount field" name="name" [(ngModel)]="donationAmount"/>
+        </clr-input-container>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline" (click)="closeDonateModal()">Cancel</button>
+      <button type="button" class="btn btn-success" (click)="edit()">
+        <clr-icon shape="heart"></clr-icon>
+        Donate
+      </button>
+    </div>
+  </clr-modal>
+<!--  <clr-modal [(clrModalOpen)]="volunteerModalOpened" [clrModalStaticBackdrop]="false">-->
+<!--    <h3 class="modal-title">Volunteer Details</h3>-->
+<!--    <div class="modal-body">-->
+<!--      <form clrForm>-->
+<!--        <img class="left" src="./assets/volunteersModalPhoto.png">-->
+<!--        <clr-input-container class="right">-->
+<!--          <label>Volunteer name: </label>-->
+<!--          <input clrInput placeholder="Volunteer name field" name="name" [(ngModel)]="volunteerName"/>-->
+<!--        </clr-input-container>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--    <div class="modal-footer">-->
+<!--      <button type="button" class="btn btn-outline" (click)="closeVolunteerModal()">Cancel</button>-->
+<!--      <button type="button" class="btn btn-primary" (click)="volunteerConfirmed()">-->
+<!--        <clr-icon shape="employee-group"></clr-icon>-->
+<!--        Volunteer-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </clr-modal>-->
+</div>

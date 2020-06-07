@@ -1,0 +1,30 @@
+<header class="header-6">
+  <div class="branding">
+    <a href="/" class="nav-link">
+      <clr-icon shape="heart"></clr-icon>
+      <span class="title">Network for Giving</span>
+    </a>
+  </div>
+  <div class="header-actions">
+    <span *ngIf="isAuthenticated; else isNotAuthenticated">
+      <clr-icon style="position: relative; right:25px" shape="user"></clr-icon>
+      <span style="position: relative; right:25px"> Hello, {{username}}</span>
+      <button (click)="logout()" [routerLink]="['/home-page']" class="btn btn-outline"
+              style="color:white">LOG OUT</button>
+    </span>
+    <ng-template #isNotAuthenticated>
+      <button [routerLink]="['/login']" class="btn btn-primary login">LOGIN</button>
+      <button [routerLink]="['/register']" class="btn btn-primary register">REGISTER</button>
+    </ng-template>
+  </div>
+</header>
+<clr-modal [(clrModalOpen)]="logoutModalOpened" [clrModalStaticBackdrop]="false">
+  <h3 class="modal-title">Are you sure you want to logout?</h3>
+  <div class="modal-body">
+    <p></p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline" (click)="closeLogoutModal()">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="logoutConfirmed()">Ok</button>
+  </div>
+</clr-modal>

@@ -1,0 +1,45 @@
+<nav class="subnav">
+  <ul class="nav">
+    <li class="nav-item">
+      <a [routerLink]="['/home-page']" class="nav-link active" href="#">Charity Catalogue</a>
+    </li>
+  </ul>
+</nav>
+<br>
+<h1 _ngcontent-clarity-c209="" style="font-size:40px">Edit Charity</h1>
+<h6 _ngcontent-clarity-c209="" style="font-size:20px"><i>Please edit the information below:</i></h6>
+<br><br>
+<form clrForm>
+  <clr-input-container>
+    <label style="font-size:20px">Title:</label>
+    <input clrInput [(ngModel)]="charity.title" name="title" required/>
+  </clr-input-container>
+  <clr-textarea-container style="size:40px">
+    <label style="font-size:20px">Description:</label>
+    <textarea clrTextarea [(ngModel)]="charity.description" name="description" required></textarea>
+  </clr-textarea-container>
+  <clr-input-container>
+    <label style="font-size:20px">Required amount: </label>
+    <input clrInput [(ngModel)]="charity.amountRequired" name="amountRequired" required/>
+  </clr-input-container>
+  <clr-input-container>
+    <label style="font-size:20px">Collected amount: </label>
+    <input clrInput [(ngModel)]="charity.amountCollected" name="amountCollected" required/>
+  </clr-input-container>
+</form><br><br>
+<br>
+<div class="buttonEdit">
+  <button (click)="edit()" type="submit" class="btn btn-icon btn-primary" style="width:150px;height:50px;"
+          aria-label="done">
+    <clr-icon shape="paint-roller"></clr-icon>
+    Edit
+  </button>
+</div>
+<blockquote>
+  “No act of kindness, no matter how small, is ever wasted.”
+  <span>Aesop</span>
+</blockquote>
+<div id="editCharityPhoto">
+  <img src="./assets/editCharityPhoto.png">
+</div>
+

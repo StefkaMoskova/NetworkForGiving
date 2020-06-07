@@ -1,0 +1,39 @@
+<div id="buttonAdd" style="float: right;">
+  <span *ngIf="isAuthenticated">
+  <button [routerLink]="['/create-charity-page']" class="btn btn-primary" style="text-align: left">CREATE CHARITY
+  </button>
+  </span>
+</div>
+<label style="float: right;margin-right: 1em; margin-top: 0.6em;" class="searchField" for="search_input">
+  <input id="search_input" type="text" [(ngModel)]="searchText" autocomplete="off"
+         placeholder="Search for charities...">
+</label>
+<br>
+<div class="panel-body">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th style="font-size:20px">Charity Name</th>
+      <th style="font-size:20px"><b>Actions</b></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let charity of charities | async | filter:searchText">
+      <td style="font-size:20px;">{{charity.title}}</td>
+      <td>
+        <span *ngIf="isAuthenticated; else isNotAuthenticated">
+          <button (click)="charityDetails(charity.id)" class="btn btn-inverse" style="margin-left: 10px;
+           background-color: #959596">Details</button>
+        <button (click)="updateCharity(charity.id, charity)" class="btn btn-primary"
+                style="margin-left: 10px">Edit</button>
+        <button (click)="deleteCharity(charity.id)" class="btn btn-danger">Delete</button>
+        </span>
+        <ng-template #isNotAuthenticated>
+          <button (click)="charityDetails(charity.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        </ng-template>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

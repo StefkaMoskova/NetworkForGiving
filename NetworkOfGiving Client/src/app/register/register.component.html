@@ -1,0 +1,57 @@
+<div class="login-wrapper">
+  <form class="login">
+    <section class="title">
+      <h3 class="welcome">Welcome to</h3>
+      <b>Network for Giving</b>
+    </section>
+    <section class="title">
+      <h3 class="welcome">Register</h3>
+    </section>
+    <div class="login-group">
+      <form clrForm>
+        <clr-input-container>
+          <input placeholder="Username" clrInput [(ngModel)]="username" name="username" required/>
+          <clr-control-error>This field is required!</clr-control-error>
+        </clr-input-container>
+      </form>
+      <form clrForm>
+        <clr-password-container>
+          <input placeholder="Password" clrPassword [(ngModel)]="password" name="password" required/>
+          <clr-control-error *clrIfError="'required'">This field is required!</clr-control-error>
+        </clr-password-container>
+      </form>
+      <form clrForm>
+        <clr-input-container>
+          <input placeholder="Name" clrInput [(ngModel)]="name" name="name" required/>
+          <clr-control-error>This field is required!</clr-control-error>
+        </clr-input-container>
+      </form>
+
+      <form clrForm>
+        <clr-input-container>
+          <input placeholder="Age" clrInput [(ngModel)]="age" name="age" required/>
+          <clr-control-error>This field is required!</clr-control-error>
+        </clr-input-container>
+      </form>
+      <form clrForm>
+        <clr-input-container>
+          <input placeholder="Location" clrInput [(ngModel)]="location" name="location"/>
+        </clr-input-container>
+      </form>
+      <form clrForm>
+        <clr-input-container>
+          <input placeholder="Gender: male/female/other" clrInput [(ngModel)]="gender" name="gender"/>
+        </clr-input-container>
+      </form>
+
+      <div id="outer">
+        <div class="inner">
+          <button (click)="register()" type="submit" class="btn btn-primary">REGISTER</button>
+        </div>
+        <div class="inner">
+          <button [routerLink]="['/login']" type="submit" class="btn btn-outline">CANCEL</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

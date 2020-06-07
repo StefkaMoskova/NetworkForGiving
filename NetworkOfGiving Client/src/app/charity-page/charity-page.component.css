@@ -1,0 +1,41 @@
+hr.solid {
+  border-top: 4px solid #0172A3;
+}
+
+h1 {
+  padding-left: 100px;
+  color: #0172A3;
+}
+
+h6 {
+  padding-left: 100px;
+}
+
+form {
+  padding-left: 100px;
+}
+
+label {
+  color: #0172A3;
+}
+
+.buttonDonate, .buttonVolunteer {
+  display: inline-block;
+  padding-left: 100px;
+}
+
+.left, .right {
+  display: inline-block;
+}
+
+.left {
+  margin: auto -70px;
+  float: left;
+}
+
+.right {
+  margin: 50px 70px;
+  float: right;
+}
+
+
